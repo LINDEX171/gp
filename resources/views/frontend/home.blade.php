@@ -43,6 +43,12 @@
       <h1 class="logo">Tourest</h1>
     </a>
 
+ <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+ <nav class="navbar">
+
     {{-- Menu de navigation --}}
        <ul class="navbar-list flex items-start gap-6">
       <li><a href="#" class="navbar-link">Home</a></li>
@@ -71,7 +77,7 @@
         @endauth
       @endif
     </ul>
-
+  </nav>
     {{-- Boutons alignés horizontalement à droite --}}
     {{-- <div class=" items-center gap-2">
 
