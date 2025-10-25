@@ -539,6 +539,71 @@ body {
 
 
 
+/*-----------------------------------*\
+  #CONTACT FORM
+\*-----------------------------------*/
+
+.contact-form .form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: var(--fw-600);
+  margin-bottom: 8px;
+  color: var(--oxford-blue);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 2px solid var(--silver-chalice);
+  border-radius: var(--radius-6);
+  font-size: var(--fs-6);
+  font-family: var(--ff-heebo);
+  transition: 0.25s var(--cubic-out);
+  background: var(--white-1);
+  color: var(--jet);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--viridian-green);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button.btn-primary {
+  justify-self: start;
+  padding: 12px 30px;
+  font-size: var(--fs-6);
+  transition: 0.3s;
+}
+
+.contact-form button.btn-primary:is(:hover, :focus) {
+  background: var(--white-1);
+  color: var(--viridian-green);
+  border-color: var(--viridian-green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form .form {
+    gap: 15px;
+  }
+}
+
 
 
 /*-----------------------------------*\
