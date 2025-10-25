@@ -5,17 +5,23 @@
 @section('content')
 
 <div class="main-panel">
-         <div class="content-wrapper">     
+  <div class="content-wrapper">     
     <div class="row">
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Voyages</h4>
+
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Client Name</th>
                                     <th>Departure</th>
                                     <th>Arrival</th>
@@ -25,63 +31,61 @@
                                     <th>Price (€)</th>
                                     <th>Status</th>
                                     <th>Actions</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($voyages as $voyage)
-                                <tr>
-                                    <td>
-                                        <input type="checkbox">
-                                    </td>
-                                    <td>{{ $voyage->fullname }}</td>
-                                    <td>{{ $voyage->departure }}</td>
-                                    <td>{{ $voyage->arrival }}</td>
-                                    <td>{{ $voyage->departure_date }}</td>
-                                    <td>{{ $voyage->arrival_date }}</td>
-                                    <td>{{ $voyage->weight }}</td>
-                                    <td>{{ $voyage->price }}</td>
-                                    <td>
-                                        @if($voyage->status == 'validated')
-                                            <div class="badge badge-outline-success">Validated</div>
-                                        @elseif($voyage->status == 'rejected')
-                                            <div class="badge badge-outline-danger">Rejected</div>
-                                        @else
-                                            <div class="badge badge-outline-warning">Pending</div>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if($voyage->status == 'pending')
-                                            <form action="{{ route('voyages.valider', $voyage->id) }}" method="POST" style="display:inline-block;">
+                                @forelse($voyages as $voyage)
+                                    <tr>
+                                        <td>{{ $voyage->fullname }}</td>
+                                        <td>{{ $voyage->departure }}</td>
+                                        <td>{{ $voyage->arrival }}</td>
+                                        <td>{{ $voyage->departure_date }}</td>
+                                        <td>{{ $voyage->arrival_date }}</td>
+                                        <td>{{ $voyage->weight }}</td>
+                                        <td>{{ $voyage->price }}</td>
+                                        <td>
+                                            @php
+                                                $badgeClass = match($voyage->status) {
+                                                    'validated' => 'badge badge-outline-success',
+                                                    'rejected' => 'badge badge-outline-danger',
+                                                    default => 'badge badge-outline-warning',
+                                                };
+                                            @endphp
+                                            <span class="{{ $badgeClass }}">{{ ucfirst($voyage->status) }}</span>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('voyages.updateStatus', $voyage->id) }}" method="POST" >
                                                 @csrf
                                                 @method('PUT')
-                                                <button type="submit" class="btn btn-sm btn-success">Valider</button>
+                                                <select name="status" onchange="this.form.submit()" class="form-control form-control-sm">
+                                                    <option value="pending" {{ $voyage->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                                    <option value="validated" {{ $voyage->status == 'validated' ? 'selected' : '' }}>Validated</option>
+                                                    <option value="rejected" {{ $voyage->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                                                </select>
                                             </form>
-
-                                            <form action="{{ route('voyages.rejeter', $voyage->id) }}" method="POST" style="display:inline-block;">
+                                         </td>
+                                         <td>
+                                            <form action="{{ route('voyages.destroy', $voyage->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer ce voyage ?');">
                                                 @csrf
-                                                @method('PUT')
-                                                <button type="submit" class="btn btn-sm btn-danger">Rejeter</button>
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">Supprimer</button>
                                             </form>
-                                        @endif
-
-                                        <form action="{{ route('voyages.destroy', $voyage->id) }}" method="POST" style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger">Supprimer</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="10" class="text-center">Aucun voyage enregistré.</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
-                        @if($voyages->isEmpty())
-                            <p class="text-center mt-3">Aucun voyage enregistré.</p>
-                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection

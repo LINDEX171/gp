@@ -15,8 +15,7 @@ Route::post('/voyages', [VoyageController::class, 'store'])->name('voyages.store
 
 
 Route::get('/voyages', [VoyageController::class, 'index'])->name('voyages');
-Route::put('/voyages/{id}/valider', [VoyageController::class, 'valider'])->name('voyages.valider');
-Route::put('/voyages/{id}/rejeter', [VoyageController::class, 'rejeter'])->name('voyages.rejeter');
+Route::put('/admin/voyages/{id}/status', [VoyageController::class, 'updateStatus'])->name('voyages.updateStatus');
 Route::delete('/voyages/{id}', [VoyageController::class, 'destroy'])->name('voyages.destroy');
 
 

@@ -50,23 +50,21 @@ class VoyageController extends Controller
 }
 
 
-public function valider($id)
+public function updateStatus(Request $request, $id)
 {
-    $voyage = \App\Models\Voyage::findOrFail($id);
-    $voyage->status = 'validated';
+    $voyage = Voyage::findOrFail($id);
+
+    // On attend un champ 'status' dans la requête
+    $request->validate([
+        'status' => 'required|in:pending,validated,rejected',
+    ]);
+
+    $voyage->status = $request->status;
     $voyage->save();
 
-    return redirect()->back()->with('success', 'Voyage validé avec succès.');
+    return redirect()->back()->with('success', 'Statut mis à jour avec succès.');
 }
 
-public function rejeter($id)
-{
-    $voyage = \App\Models\Voyage::findOrFail($id);
-    $voyage->status = 'rejected';
-    $voyage->save();
-
-    return redirect()->back()->with('success', 'Voyage rejeté.');
-}
 
 public function destroy($id)
 {
