@@ -5,11 +5,13 @@ use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', [TemplateController::class, 'index']);
+// Route::get('/home', [TemplateController::class, 'index'])->name('home');
+Route::get('/', [TemplateController::class, 'index'])->name('home');
+
 
 Route::post('/voyages', [VoyageController::class, 'store'])->name('voyages.store');
 
