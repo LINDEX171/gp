@@ -17,4 +17,8 @@ class TemplateController extends Controller
         // Envoie la variable à la vue
         return view('frontend.home', compact('voyages'));
     }
+
+    public function indexgp(){
+         return view('frontend.gp');
+    }
 }

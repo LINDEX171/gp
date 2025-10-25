@@ -10,17 +10,22 @@ class Voyage extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname',
-        'phone',
-        'whatsapp',
-        'email',
-        'departure',
-        'arrival',
-        'departure_date',
-        'arrival_date',
-        'weight',
-        'price',
-        'comment',
-        'status',
-    ];
+    'fullname',
+    'phone',
+    'whatsapp',
+    'email',
+    'departure',
+    'departure1',
+    'arrival',
+    'arrival1',
+    'departure_date',
+    'arrival_date',
+    'weight',
+    'price',
+    'comment',
+    'status',
+    'departure_photo',
+    'arrival_photo',
+];
+
 }

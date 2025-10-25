@@ -312,7 +312,7 @@ body {
 
 .logo {
   color: var(--white-1);
-  font-size: var(--fs-2);
+  font-size: var(--fs-10);
   font-weight: var(--fw-600);
 }
 

@@ -1,6 +1,4 @@
-
 @extends('layouts.auth')
-
 
 @section('content')
 
@@ -24,7 +22,9 @@
                                 <tr>
                                     <th>Client Name</th>
                                     <th>Departure</th>
+                                    <th>Photo Départ</th>
                                     <th>Arrival</th>
+                                    <th>Photo Arrivée</th>
                                     <th>Departure Date</th>
                                     <th>Arrival Date</th>
                                     <th>Weight (kg)</th>
@@ -39,7 +39,31 @@
                                     <tr>
                                         <td>{{ $voyage->fullname }}</td>
                                         <td>{{ $voyage->departure }}</td>
+                                        <td>
+                                            @if($voyage->departure_photo)
+                                                <img src="{{ asset('storage/'.$voyage->departure_photo) }}" alt="Départ" width="50">
+                                            @endif
+                                            <form action="{{ route('voyages.updatePhoto', $voyage->id) }}" method="POST" enctype="multipart/form-data" style="margin-top:5px">
+                                                @csrf
+                                                @method('PUT')
+                                                <input type="file" name="departure_photo" accept="image/*" style="display:inline-block" required>
+                                                <button type="submit" class="btn btn-sm btn-outline-primary">Mettre à jour</button>
+                                            </form>
+                                        </td>
+
                                         <td>{{ $voyage->arrival }}</td>
+                                        <td>
+                                            @if($voyage->arrival_photo)
+                                                <img src="{{ asset('storage/'.$voyage->arrival_photo) }}" alt="Arrivée" width="50">
+                                            @endif
+                                            <form action="{{ route('voyages.updatePhoto', $voyage->id) }}" method="POST" enctype="multipart/form-data" style="margin-top:5px">
+                                                @csrf
+                                                @method('PUT')
+                                                <input type="file" name="arrival_photo" accept="image/*" style="display:inline-block" required>
+                                                <button type="submit" class="btn btn-sm btn-outline-primary">Mettre à jour</button>
+                                            </form>
+                                        </td>
+
                                         <td>{{ $voyage->departure_date }}</td>
                                         <td>{{ $voyage->arrival_date }}</td>
                                         <td>{{ $voyage->weight }}</td>
@@ -55,7 +79,7 @@
                                             <span class="{{ $badgeClass }}">{{ ucfirst($voyage->status) }}</span>
                                         </td>
                                         <td>
-                                            <form action="{{ route('voyages.updateStatus', $voyage->id) }}" method="POST" >
+                                            <form action="{{ route('voyages.updateStatus', $voyage->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <select name="status" onchange="this.form.submit()" class="form-control form-control-sm">
@@ -64,8 +88,8 @@
                                                     <option value="rejected" {{ $voyage->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
                                                 </select>
                                             </form>
-                                         </td>
-                                         <td>
+                                        </td>
+                                        <td>
                                             <form action="{{ route('voyages.destroy', $voyage->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer ce voyage ?');">
                                                 @csrf
                                                 @method('DELETE')
@@ -75,7 +99,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="10" class="text-center">Aucun voyage enregistré.</td>
+                                        <td colspan="12" class="text-center">Aucun voyage enregistré.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

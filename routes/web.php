@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/home', [TemplateController::class, 'index'])->name('home');
 Route::get('/', [TemplateController::class, 'index'])->name('home');
+Route::get('/gp', [TemplateController::class, 'indexgp'])->name('gp');
 
 
 Route::post('/voyages', [VoyageController::class, 'store'])->name('voyages.store');
+Route::put('/voyages/{voyage}/update-photo', [VoyageController::class, 'updatePhoto'])->name('voyages.updatePhoto');
+
 
 
 Route::get('/voyages', [VoyageController::class, 'index'])->name('voyages');

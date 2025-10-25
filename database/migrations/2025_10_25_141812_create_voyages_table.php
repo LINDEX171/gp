@@ -18,7 +18,9 @@ return new class extends Migration
         $table->string('whatsapp');
         $table->string('email');
         $table->string('departure');
+        $table->string('departure1');
         $table->string('arrival');
+        $table->string('arrival1');
         $table->date('departure_date');
         $table->date('arrival_date');
         $table->integer('weight');

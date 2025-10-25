@@ -16,7 +16,9 @@ class VoyageController extends Controller
             'whatsapp' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'departure' => 'required|string|max:255',
+            'departure1' => 'required|string|max:255',
             'arrival' => 'required|string|max:255',
+            'arrival1' => 'required|string|max:255',
             'departure-date' => 'required|date',
             'arrival-date' => 'required|date',
             'weight' => 'required|integer',
@@ -31,7 +33,9 @@ class VoyageController extends Controller
             'whatsapp' => $validated['whatsapp'],
             'email' => $validated['email'],
             'departure' => $validated['departure'],
+            'departure1' => $validated['departure1'],
             'arrival' => $validated['arrival'],
+            'arrival1' => $validated['arrival1'],
             'departure_date' => $validated['departure-date'],
             'arrival_date' => $validated['arrival-date'],
             'weight' => $validated['weight'],
@@ -63,6 +67,55 @@ public function updateStatus(Request $request, $id)
     $voyage->save();
 
     return redirect()->back()->with('success', 'Statut mis à jour avec succès.');
+}
+
+
+public function uploadPhotos(Request $request, $id)
+{
+    $voyage = Voyage::findOrFail($id);
+
+    $request->validate([
+        'departure_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'arrival_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    if ($request->hasFile('departure_photo')) {
+        $departurePhoto = $request->file('departure_photo')->store('country_photos', 'public');
+        $voyage->departure_photo = $departurePhoto;
+    }
+
+    if ($request->hasFile('arrival_photo')) {
+        $arrivalPhoto = $request->file('arrival_photo')->store('country_photos', 'public');
+        $voyage->arrival_photo = $arrivalPhoto;
+    }
+
+    $voyage->save();
+
+    return redirect()->back()->with('success', 'Photos mises à jour avec succès.');
+}
+
+public function updatePhoto(Request $request, $id)
+{
+    $voyage = Voyage::findOrFail($id);
+
+    $request->validate([
+        'departure_photo' => 'nullable|image|max:2048',
+        'arrival_photo' => 'nullable|image|max:2048',
+    ]);
+
+    if ($request->hasFile('departure_photo')) {
+        $path = $request->file('departure_photo')->store('voyage_photos', 'public');
+        $voyage->departure_photo = $path;
+    }
+
+    if ($request->hasFile('arrival_photo')) {
+        $path = $request->file('arrival_photo')->store('voyage_photos', 'public');
+        $voyage->arrival_photo = $path;
+    }
+
+    $voyage->save();
+
+    return redirect()->back()->with('success', 'Photos mises à jour avec succès.');
 }
 
 
