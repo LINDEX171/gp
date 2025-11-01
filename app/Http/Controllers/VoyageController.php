@@ -118,6 +118,12 @@ public function updatePhoto(Request $request, $id)
     return redirect()->back()->with('success', 'Photos mises à jour avec succès.');
 }
 
+public function show($id)
+{
+    $voyage = Voyage::findOrFail($id);
+    return view('frontend.voyage', compact('voyage'));
+}
+
 
 public function destroy($id)
 {

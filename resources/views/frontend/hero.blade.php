@@ -10,16 +10,17 @@
 
           <div class="hero-content">
 
-            <p class="section-subtitle">Explore Your Travel</p>
+          <p class="section-subtitle">Connectez l’Afrique et l’Europe</p>
+          <h2 class="hero-title">La plateforme fiable pour envoyer ou transporter vos colis</h2>
 
-            <h2 class="hero-title">Trusted Travel Agency</h2>
 
             <p class="hero-text">
-              I travel not to go anywhere, but to go. I travel for travel's sake the great affair is to move.
+             Envoyez ou transportez des colis entre l’Afrique et l’Europe, facilement et en toute sécurité.
             </p>
 
             <div class="btn-group">
-              <a href="#" class="btn btn-primary">Contact Us</a>
+              <a href="{{ url('/gp') }}" class="btn btn-primary">Devenir GP ?</a>
+
 
               <a href="#" class="btn btn-outline">Learn More</a>
             </div>

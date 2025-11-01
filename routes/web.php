@@ -14,6 +14,7 @@ Route::get('/', [TemplateController::class, 'index'])->name('home');
 Route::get('/gp', [TemplateController::class, 'indexgp'])->name('gp');
 
 
+
 Route::post('/voyages', [VoyageController::class, 'store'])->name('voyages.store');
 Route::put('/voyages/{voyage}/update-photo', [VoyageController::class, 'updatePhoto'])->name('voyages.updatePhoto');
 
@@ -22,7 +23,6 @@ Route::put('/voyages/{voyage}/update-photo', [VoyageController::class, 'updatePh
 Route::get('/voyages', [VoyageController::class, 'index'])->name('voyages');
 Route::put('/admin/voyages/{id}/status', [VoyageController::class, 'updateStatus'])->name('voyages.updateStatus');
 Route::delete('/voyages/{id}', [VoyageController::class, 'destroy'])->name('voyages.destroy');
-
 
 Route::get('/dashboard', function () {
     return view('auth.dashboard');

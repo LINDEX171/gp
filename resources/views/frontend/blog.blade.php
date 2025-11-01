@@ -1,4 +1,4 @@
-  <section class="section blog">
+  {{-- <section class="section blog">
         <div class="container">
 
           <p class="section-subtitle">From The Blog Post</p>
@@ -175,4 +175,4 @@
           </ul>
 
         </div>
-      </section>
+      </section> --}}

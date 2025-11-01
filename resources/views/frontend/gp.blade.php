@@ -1,107 +1,90 @@
- <section class="section contact-form">
-  <div class="container">
-    <p class="section-subtitle">Vous voulez devenir GP? </p>
-    <h2 class="h2 section-title">Demande pour Devenir GP</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- Message de succès -->
-    @if(session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourest - Explore the World</title>
 
-    <!-- Affichage des erreurs -->
-    @if($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-    <form action="{{ route('voyages.store') }}" method="post" class="form">
-      @csrf
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-      <!-- Nom complet -->
-      <div class="form-group">
-        <label for="fullname">Nom complet</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" value="{{ old('fullname') }}" required>
-      </div>
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-      <!-- Téléphone -->
-      <div class="form-group">
-        <label for="phone">Téléphone</label>
-        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" value="{{ old('phone') }}" required>
-      </div>
+</head>
 
-      <!-- WhatsApp -->
-      <div class="form-group">
-        <label for="whatsapp">WhatsApp</label>
-        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Numéro WhatsApp" value="{{ old('whatsapp') }}" required>
-      </div>
+<body id="top">
 
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Votre email" value="{{ old('email') }}" required>
-      </div>
+  <!-- 
+    - #HEADER
+  -->
+ 
+           
+@include('frontend.header')
 
-      <!-- Pays et  -->
-      <div class="form-group">
-        <label for="departure">Pays et ville de départ</label>
-        <input type="text" id="departure" name="departure" placeholder="Ex : France" value="{{ old('departure') }}" required>
-      </div>
-       <!-- ville d’arrivée -->
-       <div class="form-group">
-        <label for="departure1">Pays et ville d’arrivée</label>
-        <input type="text" id="departure1" name="departure1" placeholder="Ex : Paris" value="{{ old('arrival1') }}" required>
-      </div>
+  <main>
+    <article>
+     
+      {{-- ------------------------------- contact ---------------------------- --}}
+
+     @include('frontend.contact')
 
 
-      <!-- Pays et ville d’arrivée -->
-      <div class="form-group">
-        <label for="arrival">Pays et ville d’arrivée</label>
-        <input type="text" id="arrival" name="arrival" placeholder="Ex : USA " value="{{ old('arrival') }}" required>
-      </div>
- <!-- ville d’arrivée -->
-       <div class="form-group">
-        <label for="arrival1">Pays et ville d’arrivée</label>
-        <input type="text" id="arrival1" name="arrival1" placeholder="Ex : New York" value="{{ old('arrival1') }}" required>
-      </div>
 
-      <!-- Date départ et date arrivée -->
-      <div class="form-group">
-        <label for="departure-date">Date départ</label>
-        <input type="date" id="departure-date" name="departure-date" value="{{ old('departure-date') }}" required>
-      </div>
 
-      <div class="form-group">
-        <label for="arrival-date">Date arrivée</label>
-        <input type="date" id="arrival-date" name="arrival-date" value="{{ old('arrival-date') }}" required>
-      </div>
+    </article>
+  </main>
 
-      <!-- Kilos disponibles -->
-      <div class="form-group">
-        <label for="weight">Kilos disponibles</label>
-        <input type="number" id="weight" name="weight" placeholder="Ex : 10 kg" value="{{ old('weight') }}" required>
-      </div>
 
-      <!-- Prix par kilo -->
-      <div class="form-group">
-        <label for="price">Prix par kilo</label>
-        <input type="number" id="price" name="price" placeholder="Ex : 5 € / kg" value="{{ old('price') }}" required>
-      </div>
 
-      <!-- Commentaire -->
-      <div class="form-group">
-        <label for="comment">Commentaire</label>
-        <textarea id="comment" name="comment" rows="4" placeholder="Vos remarques">{{ old('comment') }}</textarea>
-      </div>
 
-      <!-- Bouton envoyer -->
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
-  </div>
-</section>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+@include('frontend.footer')
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top aria-label="Go To Top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

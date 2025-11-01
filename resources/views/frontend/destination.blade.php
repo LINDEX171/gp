@@ -1,4 +1,4 @@
-<section class="section destination">
+{{-- <section class="section destination">
         <div class="container">
 
           <p class="section-subtitle">Destinations</p>
@@ -95,4 +95,4 @@
           </ul>
 
         </div>
-      </section>
+      </section> --}}

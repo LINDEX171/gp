@@ -50,24 +50,24 @@
 
       <!-- Pays et  -->
       <div class="form-group">
-        <label for="departure">Pays et ville de départ</label>
+        <label for="departure">Pays départ</label>
         <input type="text" id="departure" name="departure" placeholder="Ex : France" value="{{ old('departure') }}" required>
       </div>
        <!-- ville d’arrivée -->
        <div class="form-group">
-        <label for="departure1">Pays et ville d’arrivée</label>
+        <label for="departure1">ville départ</label>
         <input type="text" id="departure1" name="departure1" placeholder="Ex : Paris" value="{{ old('arrival1') }}" required>
       </div>
 
 
       <!-- Pays et ville d’arrivée -->
       <div class="form-group">
-        <label for="arrival">Pays et ville d’arrivée</label>
+        <label for="arrival">Pays d’arrivée</label>
         <input type="text" id="arrival" name="arrival" placeholder="Ex : USA " value="{{ old('arrival') }}" required>
       </div>
  <!-- ville d’arrivée -->
        <div class="form-group">
-        <label for="arrival1">Pays et ville d’arrivée</label>
+        <label for="arrival1">ville d’arrivée</label>
         <input type="text" id="arrival1" name="arrival1" placeholder="Ex : New York" value="{{ old('arrival1') }}" required>
       </div>
 
@@ -90,7 +90,7 @@
 
       <!-- Prix par kilo -->
       <div class="form-group">
-        <label for="price">Prix par kilo</label>
+        <label for="price">Prix par kilo(en fcfa)</label>
         <input type="number" id="price" name="price" placeholder="Ex : 5 € / kg" value="{{ old('price') }}" required>
       </div>
 

@@ -247,11 +247,20 @@ body {
 
 .card-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+  left: 5px;
   background: var(--mikado-yellow);
   color: var(--white-1);
-  padding: 14px 10px;
+  padding: 5px 5px;
+  border-radius: var(--radius-6);
+}
+.card-badge1 {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--mikado-yellow);
+  color: var(--white-1);
+  padding: 5px 5px;
   border-radius: var(--radius-6);
 }
 
@@ -260,8 +269,14 @@ body {
   font-size: 20px;
   margin-inline: auto;
 }
+.card-badge1 ion-icon {
+  --ionicon-stroke-width: 60px;
+  font-size: 20px;
+  margin-inline: auto;
+}
 
 .card-badge time { font-weight: var(--fw-700); }
+.card-badge1 time { font-weight: var(--fw-700); }
 
 :is(.popular, .blog) .card-content { padding: 30px 15px; }
 
@@ -292,14 +307,14 @@ body {
 
 .header {
   background: var(--viridian-green);
-  padding-block: 20px;
-  height: 88px;
+  padding-block: 0px;
+  height: 130px;
   overflow: hidden;
   transition: 0.25s var(--cubic-out);
 }
 
 .header.active {
-  height: 425px;
+  height: 490px;
   transition-duration: 0.35s;
 }
 

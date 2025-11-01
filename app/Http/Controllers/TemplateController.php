@@ -21,4 +21,10 @@ class TemplateController extends Controller
     public function indexgp(){
          return view('frontend.gp');
     }
+
+    public function show($id)
+{
+    $voyage = Voyage::findOrFail($id);
+    return view('frontend.voyage', compact('voyage'));
+}
 }
