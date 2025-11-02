@@ -2,7 +2,7 @@
   <div class="container flex items-center justify-between">
 
     {{-- Logo --}}
-    <a href="#" class="logo">
+    <a href="{{ url('/') }}" class="logo">
       <img src="assets/images/smagp.png" width="90" height="90" alt="">
       
       {{-- <h1 class="logo">Tourest</h1> --}}
@@ -20,10 +20,10 @@
 
     {{-- Menu de navigation --}}
        <ul class="navbar-list flex items-start gap-6">
-      <li><a href="{{ url('/') }}" class="navbar-link">Home</a></li>
+      <li><a href="{{ url('/') }}" class="navbar-link">Accueil</a></li>
       <li><a href="{{ url('/gp') }}" class="navbar-link">Devenir GP</a></li>
-      <li><a href="{{ url('/') }}" class="navbar-link">Voyages Disponibles</a></li>
-      <li><a href="{{ url('/') }}" class="navbar-link">Contactez nous</a></li> 
+      <li><a href="{{ url('/voyagedispo') }}" class="navbar-link">Voyages Disponibles</a></li>
+      {{-- <li><a href="{{ url('/') }}" class="navbar-link">Contactez nous</a></li>  --}}
  
     </ul>
     <ul class="navbar-list flex items-start gap-4">

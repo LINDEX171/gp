@@ -118,11 +118,7 @@ public function updatePhoto(Request $request, $id)
     return redirect()->back()->with('success', 'Photos mises à jour avec succès.');
 }
 
-public function show($id)
-{
-    $voyage = Voyage::findOrFail($id);
-    return view('frontend.voyage', compact('voyage'));
-}
+
 
 
 public function destroy($id)
@@ -132,6 +128,22 @@ public function destroy($id)
 
     return redirect()->back()->with('success', 'Voyage supprimé.');
 }
+
+public function dashboard()
+{
+    // Statistiques des voyages
+    $voyagesEnAttente = Voyage::where('status', 'pending')->count();
+    $voyagesValides = Voyage::where('status', 'validated')->count();
+    $voyagesRejetes = Voyage::where('status', 'rejected')->count();
+
+    return view('auth.dashboard', compact(
+        'voyagesEnAttente',
+        'voyagesValides',
+        'voyagesRejetes'
+    ));
+}
+
+
 
 
 }

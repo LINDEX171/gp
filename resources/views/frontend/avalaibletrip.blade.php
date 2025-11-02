@@ -10,7 +10,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.ico" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
     - custom css link
@@ -39,51 +39,8 @@
 
   <main>
     <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      @include('frontend.hero')
-
-
-      <!-- 
-        - #DESTINATION
-      -->
-
-      @include('frontend.destination')
-
-      <!-- 
-        - #POPULAR
-      -->
-  
-
-
-        @include('frontend.travel')
-
-
-      <!-- 
-        - #ABOUT
-      -->
-     @include('frontend.about')
      
-
-
-     @include('frontend.voyagedispo') 
-      {{-- ------------------------------- contact ---------------------------- --}}
-
-     @include('frontend.contact')
-
-
-
-
-      <!-- 
-        - #BLOG
-      -->
-      
-    @include('frontend.blog')
-
-     
+    @include('frontend.voyagedispo')
 
 
     </article>
@@ -96,9 +53,6 @@
   <!-- 
     - #FOOTER
   -->
-
-
-
 
 @include('frontend.footer')
 

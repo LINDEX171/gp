@@ -22,6 +22,14 @@ class TemplateController extends Controller
          return view('frontend.gp');
     }
 
+    public function indexvoyagedispo()
+{
+    $voyages = Voyage::where('status', 'validated')->get();
+
+    // Envoie la variable à la vue
+    return view('frontend.avalaibletrip', compact('voyages'));
+}
+
     public function show($id)
 {
     $voyage = Voyage::findOrFail($id);

@@ -3,114 +3,28 @@
 
       <div class="footer-top">
 
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Top destination</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Indonesia, Jakarta</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Maldives, Malé</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Australia, Canberra</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Thailand, Bangkok</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Morocco, Rabat</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Categories</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Travel</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Lifestyle</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Fashion</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Education</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Food & Drink</a>
-          </li>
-
-        </ul>
-
+      
         <ul class="footer-list">
 
           <li>
             <p class="footer-list-title">Quick links</p>
           </li>
 
-          <li>
-            <a href="#" class="footer-link">About</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Contact</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Tours</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Booking</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Terms & Conditions</a>
-          </li>
+           <li><a href="{{ url('/') }}" class="navbar-link">Accueil</a></li>
+      <li><a href="{{ url('/gp') }}" class="navbar-link">Devenir GP</a></li>
+      <li><a href="{{ url('/voyagedispo') }}" class="navbar-link">Voyages Disponibles</a></li>
 
         </ul>
 
-        <div class="footer-list">
-
-          <p class="footer-list-title">Get a newsletter</p>
-
-          <p class="newsletter-text">
-            For the latest deals and tips, travel no further than your inbox
-          </p>
-
-          <form action="" class="newsletter-form">
-            <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
-
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-
-        </div>
 
       </div>
 
       <div class="footer-bottom">
 
-        <a href="#" class="logo">Tourest</a>
+        <a href="#" class="logo">Sama GP</a>
 
         <p class="copyright">
-          &copy; 2022 <a href="#" class="copyright-link">codewithsadee</a>. All Rights Reserved
+          &copy; 2025, Conçu par <a href="https://github.com/LINDEX171" class="copyright-link">L'index</a>. All Rights Reserved
         </p>
 
         <ul class="social-list">

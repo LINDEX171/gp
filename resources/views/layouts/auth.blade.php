@@ -5,10 +5,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>SamaGP Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/auth/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('assets/auth/vendors/jvectormap/jquery-jvectormap.css') }}">
@@ -21,7 +22,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('assets/auth/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/auth/images/favicon.ico') }}" />
   </head>
  
 
@@ -30,23 +31,24 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img src="{{ asset('assets/auth/images/logo.svg') }}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{ asset('assets/auth/images/logo-mini.svg') }}" alt="logo" /></a>
+          {{-- <a class="sidebar-brand brand-logo" href="index.html"><img src="{{ asset('assets/auth/images/favicon.ico') }}" alt="logo" /></a> --}}
+      <a href="{{ url('/') }}"><img src="assets/images/smagp.png" width="90" height="90" alt=""></a>   
+          {{-- <a class="sidebar-brand brand-logo-mini" href="{{ url('/') }}"><img src="{{ asset('assets/auth/images/logo-mini.svg') }}" alt="logo" /></a> --}}
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="{{ asset('assets/auth/images/faces/face15.jpg') }}" alt="">
+            <img class="img-xs rounded-circle " src="{{ asset('assets/images/loum.jpg') }}" alt="">   
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Gold Member</span>
+                  <h5 class="mb-0 font-weight-normal">S.M.Loum</h5>
+                  <span>Administrateur</span>
                 </div>
               </div>
-              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+              {{-- <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a> --}}
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
                 <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
@@ -112,21 +114,21 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('assets/auth/images/logo-mini.svg')}}" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}"><img src="{{ asset('assets/images/smagp.png') }}" alt="logo" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
               <span class="mdi mdi-menu"></span>
             </button>
             <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
+              {{-- <li class="nav-item w-100">
                 <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
                   <input type="text" class="form-control" placeholder="Search products">
                 </form>
-              </li>
-            </ul>
+              </li> --}}
+            </ul> 
             <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item dropdown d-none d-lg-block">
+              {{-- <li class="nav-item dropdown d-none d-lg-block">
                 <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Projects</h6>
@@ -166,19 +168,19 @@
                   <div class="dropdown-divider"></div>
                   <p class="p-3 mb-0 text-center">See all projects</p>
                 </div>
-              </li>
+              </li> --}}
               <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
+                {{-- <a class="nav-link" href="#">
                   <i class="mdi mdi-view-grid"></i>
-                </a>
+                </a> --}}
               </li>
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                {{-- <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                   <i class="mdi mdi-email"></i>
                   <span class="count bg-success"></span>
-                </a>
+                </a> --}}
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                  <h6 class="p-3 mb-0">Messages</h6>
+                  {{-- <h6 class="p-3 mb-0">Messages</h6>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
@@ -188,9 +190,9 @@
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
                       <p class="text-muted mb-0"> 1 Minutes ago </p>
                     </div>
-                  </a>
+                  </a> --}}
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  {{-- <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <img src="{{ asset('assets/auth/images/faces/face2.jpg')}}" alt="image" class="rounded-circle profile-pic">
                     </div>
@@ -198,7 +200,7 @@
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
                       <p class="text-muted mb-0"> 15 Minutes ago </p>
                     </div>
-                  </a>
+                  </a> --}}
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
@@ -214,10 +216,10 @@
                 </div>
               </li>
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                {{-- <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                   <i class="mdi mdi-bell"></i>
                   <span class="count bg-danger"></span>
-                </a>
+                </a> --}}
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                   <h6 class="p-3 mb-0">Notifications</h6>
                   <div class="dropdown-divider"></div>
@@ -263,8 +265,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
-                    <img class="img-xs rounded-circle" src="{{ asset('assets/auth/images/faces/face15.jpg')}}" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                    <img class="img-xs rounded-circle" src="{{ asset('assets/images/loum.jpg')}}" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">S.M.Loum</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -273,13 +275,13 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
+                      {{-- <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-settings text-success"></i>
-                      </div>
+                      </div> --}}
                     </div>
-                    <div class="preview-item-content">
+                    {{-- <div class="preview-item-content">
                       <p class="preview-subject mb-1">Settings</p>
-                    </div>
+                    </div> --}}
                   </a>
                   <div class="dropdown-divider"></div>
                  <!-- Formulaire de logout caché -->

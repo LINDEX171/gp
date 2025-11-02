@@ -179,6 +179,13 @@
                 <em>Posté le {{ \Carbon\Carbon::parse($voyage->created_at)->format('d/m/Y à H:i') }}</em>
               </p>
 
+
+               {{-- <a href="#" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a> --}}
+
             </div> <!-- end card-content -->
 
           </div>

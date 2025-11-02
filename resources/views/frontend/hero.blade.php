@@ -22,7 +22,7 @@
               <a href="{{ url('/gp') }}" class="btn btn-primary">Devenir GP ?</a>
 
 
-              <a href="#" class="btn btn-outline">Learn More</a>
+              <a href="{{ url('/voyagedispo') }}" class="btn btn-outline">Voyages disponibles</a>
             </div>
 
           </div>
