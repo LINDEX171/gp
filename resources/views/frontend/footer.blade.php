@@ -7,7 +7,7 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Quick links</p>
+            <p class="footer-list-title">Liens rapides</p>
           </li>
 
            <li><a href="{{ url('/') }}" class="navbar-link">Accueil</a></li>

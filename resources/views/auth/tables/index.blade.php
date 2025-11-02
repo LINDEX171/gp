@@ -20,18 +20,19 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Client Name</th>
-                                    <th>Departure</th>
-                                    <th>Photo Départ</th>
-                                    <th>Arrival</th>
-                                    <th>Photo Arrivée</th>
-                                    <th>Departure Date</th>
-                                    <th>Arrival Date</th>
-                                    <th>Weight (kg)</th>
-                                    <th>Price (€)</th>
-                                    <th>Status</th>
+                                    <th>Nom du client</th>
+                                    <th>Départ</th>
+                                    <th>Photo du départ</th>
+                                    <th>Arrivée</th>
+                                    <th>Photo de l'arrivée</th>
+                                    <th>Date de départ</th>
+                                    <th>Date d'arrivée</th>
+                                    <th>Poids (kg)</th>
+                                    <th>Prix (fcfa)</th>
+                                    <th>Statut</th>
                                     <th>Actions</th>
-                                    <th>Delete</th>
+                                    <th>Supprimer</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,9 +84,9 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <select name="status" onchange="this.form.submit()" class="form-control form-control-sm">
-                                                    <option value="pending" {{ $voyage->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                                    <option value="validated" {{ $voyage->status == 'validated' ? 'selected' : '' }}>Validated</option>
-                                                    <option value="rejected" {{ $voyage->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                                                    <option value="pending" {{ $voyage->status == 'pending' ? 'selected' : '' }}>En attente</option>
+                                                    <option value="validated" {{ $voyage->status == 'validated' ? 'selected' : '' }}>Validé</option>
+                                                    <option value="rejected" {{ $voyage->status == 'rejected' ? 'selected' : '' }}>Rejeté</option>
                                                 </select>
                                             </form>
                                         </td>

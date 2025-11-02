@@ -174,10 +174,10 @@
               </div>
 
              
-
+{{-- 
               <p class="text-muted ">
                 <em>Posté le {{ \Carbon\Carbon::parse($voyage->created_at)->format('d/m/Y à H:i') }}</em>
-              </p>
+              </p> --}}
 
 
                {{-- <a href="#" class="btn-link">
