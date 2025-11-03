@@ -14,7 +14,7 @@
       </div>
     @endif
 
-    <form action="{{ route('voyages.store') }}" method="post" class="form">
+    <form action="{{ route('voyages.store') }}" method="post" class="form" enctype="multipart/form-data">
       @csrf
 
       <!-- Nom complet -->
@@ -83,6 +83,30 @@
         <input type="number" id="price" name="price" placeholder="Ex : 500" value="{{ old('price') }}" required>
       </div>
 
+      <!-- Photo de profil -->
+<div class="form-group">
+  <label for="profile_photo">Photo de profil</label>
+  <input type="file" id="profile_photo" name="profile_photo" accept="image/*" required>
+</div>
+
+<!-- Photo carte d’identité -->
+<div class="form-group">
+  <label for="id_card_photo">Photo de la carte d’identité</label>
+  <input type="file" id="id_card_photo" name="id_card_photo" accept="image/*" required>
+</div>
+
+<!-- Dernier jour de dépôt -->
+<div class="form-group" style="color: red;">
+  <label for="last_deposit_day" style="color: red;">Dernier jour de dépôt</label>
+  <input 
+    type="date" 
+    id="last_deposit_day" 
+    name="last_deposit_day" 
+    required 
+    style="border: 2px solid red; color: red; background-color: #ffeaea;"
+  >
+</div>
+
       <!-- Commentaire -->
       <div class="form-group">
         <label for="comment">Commentaire</label>
@@ -135,6 +159,6 @@
   });
 </script>
 @endif
-  
+
 
 </section>

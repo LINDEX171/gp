@@ -29,11 +29,12 @@
 
         <ul class="social-list">
 
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
+<li>
+  <a href="https://wa.me/773572369" target="_blank" class="social-link">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+</li>
+
 
           <li>
             <a href="#" class="social-link">

@@ -8,43 +8,52 @@ use App\Models\Voyage;
 class VoyageController extends Controller
 {
     public function store(Request $request)
-    {
-        // Validation
-        $validated = $request->validate([
-            'fullname' => 'required|string|max:255',
-            'phone' => 'required|string|max:50',
-            'whatsapp' => 'required|string|max:50',
-            'email' => 'required|email|max:255',
-            'departure' => 'required|string|max:255',
-            'departure1' => 'required|string|max:255',
-            'arrival' => 'required|string|max:255',
-            'arrival1' => 'required|string|max:255',
-            'departure-date' => 'required|date',
-            'arrival-date' => 'required|date',
-            'weight' => 'required|integer',
-            'price' => 'required|numeric',
-            'comment' => 'nullable|string',
-        ]);
+{
+    $validated = $request->validate([
+        'fullname' => 'required|string|max:255',
+        'phone' => 'required|string|max:50',
+        'whatsapp' => 'required|string|max:50',
+        'email' => 'required|email|max:255',
+        'departure' => 'required|string|max:255',
+        'departure1' => 'required|string|max:255',
+        'arrival' => 'required|string|max:255',
+        'arrival1' => 'required|string|max:255',
+        'departure-date' => 'required|date',
+        'arrival-date' => 'required|date',
+        'weight' => 'required|integer',
+        'price' => 'required|numeric',
+        'comment' => 'nullable|string',
+        'profile_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'id_card_photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'last_deposit_day' => 'required|date',
+    ]);
 
-        // Créer le voyage
-        Voyage::create([
-            'fullname' => $validated['fullname'],
-            'phone' => $validated['phone'],
-            'whatsapp' => $validated['whatsapp'],
-            'email' => $validated['email'],
-            'departure' => $validated['departure'],
-            'departure1' => $validated['departure1'],
-            'arrival' => $validated['arrival'],
-            'arrival1' => $validated['arrival1'],
-            'departure_date' => $validated['departure-date'],
-            'arrival_date' => $validated['arrival-date'],
-            'weight' => $validated['weight'],
-            'price' => $validated['price'],
-            'comment' => $validated['comment'] ?? null,
-        ]);
+    // 🔽 Sauvegarde des fichiers
+    $profilePhotoPath = $request->file('profile_photo')?->store('voyages/photos', 'public');
+    $idCardPhotoPath = $request->file('id_card_photo')?->store('voyages/id_cards', 'public');
 
-        return redirect()->back()->with('success', 'Votre demande a été envoyée avec succès !');
-    }
+    Voyage::create([
+        'fullname' => $validated['fullname'],
+        'phone' => $validated['phone'],
+        'whatsapp' => $validated['whatsapp'],
+        'email' => $validated['email'],
+        'departure' => $validated['departure'],
+        'departure1' => $validated['departure1'],
+        'arrival' => $validated['arrival'],
+        'arrival1' => $validated['arrival1'],
+        'departure_date' => $validated['departure-date'],
+        'arrival_date' => $validated['arrival-date'],
+        'weight' => $validated['weight'],
+        'price' => $validated['price'],
+        'comment' => $validated['comment'] ?? null,
+        'profile_photo' => $profilePhotoPath,
+        'id_card_photo' => $idCardPhotoPath,
+        'last_deposit_day' => $validated['last_deposit_day'],
+    ]);
+
+    return redirect()->back()->with('success', 'Votre demande a été envoyée avec succès !');
+}
+
 
 
     public function index()

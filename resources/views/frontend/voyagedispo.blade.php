@@ -172,6 +172,33 @@
                   <h3 class="author-name">{{ number_format($voyage->price,0,',',' ') }} FCFA</h3>
                 </div>
               </div>
+              
+
+
+              <div class="author-wrapper">
+    <figure class="author-avatar">
+        <ion-icon name="chatbubble-ellipses-outline" style="color:#607d8b;font-size:24px;"></ion-icon>
+    </figure>
+    <div>
+        <p class="author-title">Commentaire</p>
+        <h3 class="author-name">{{ $voyage->comment }}</h3>
+    </div>
+</div>
+
+
+
+{{-- Dernier jour de dépôt --}}
+<div class="author-wrapper">
+    <figure class="author-avatar">
+        <ion-icon name="calendar-outline" style="color:#dc3545;font-size:24px;"></ion-icon>
+    </figure>
+    <div>
+        <p class="author-title" style="color:red;">Dernier jour de dépôt</p>
+        <h3 class="author-name" style="color:red;">
+            {{ \Carbon\Carbon::parse($voyage->last_deposit_day)->format('d/m/Y') }}
+        </h3>
+    </div>
+</div>
 
              
 {{-- 

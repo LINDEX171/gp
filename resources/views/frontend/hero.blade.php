@@ -10,7 +10,7 @@
 
           <div class="hero-content">
 
-          <p class="section-subtitle">Connectez l’Afrique et l’Europe</p>
+          <p class="section-subtitle">Transporter des colis entre le Sénégal et le reste du monde</p>
           <h2 class="hero-title">La plateforme fiable pour envoyer ou transporter vos colis</h2>
 
 
@@ -19,7 +19,7 @@
             </p>
 
             <div class="btn-group">
-              <a href="{{ url('/gp') }}" class="btn btn-primary">Devenir GP ?</a>
+              <a href="{{ url('/gp') }}" class="btn btn-primary">Postuler pour un voyage ?</a>
 
 
               <a href="{{ url('/voyagedispo') }}" class="btn btn-outline">Voyages disponibles</a>

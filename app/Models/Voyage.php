@@ -26,6 +26,10 @@ class Voyage extends Model
     'status',
     'departure_photo',
     'arrival_photo',
+    'profile_photo',
+    'id_card_photo',
+    'last_deposit_day',
 ];
+
 
 }

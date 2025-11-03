@@ -5,10 +5,10 @@
 
       <p class="section-subtitle">À propos de nous</p>
 
-      <h2 class="h2 section-title">Simplifiez l’envoi de vos colis entre l’Afrique et l’Europe.</h2>
+      <h2 class="h2 section-title">Simplifiez l’envoi de vos colis  entre le Sénégal et le reste du monde.</h2>
 
       <p class="about-text">
-        GP Connect est la plateforme qui met en relation voyageurs et expéditeurs pour transporter vos colis en toute sécurité et de manière économique. 
+        SamaGP est la plateforme qui met en relation voyageurs et expéditeurs pour transporter vos colis en toute sécurité et de manière économique. 
         Plus besoin de passer par des transporteurs traditionnels coûteux : votre colis est confié à un voyageur validé et contactable directement.
       </p>
 
