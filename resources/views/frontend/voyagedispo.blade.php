@@ -12,7 +12,7 @@
             <!-- Image -->
             <figure class="card-banner">
               <img 
-                src="{{ asset('assets/images/samagppays.jpg') }}" 
+                src="{{ asset('assets/images/travel1.png') }}" 
                 width="740" height="518" loading="lazy"
                 alt="Voyage de {{ $voyage->fullname }}" 
                 class="img-cover">
@@ -20,6 +20,7 @@
               <!-- Dates -->
               <span class="card-badge">
                 <ion-icon name="airplane-outline" style="transform: rotate(-45deg);"></ion-icon>
+                 <span>{{ $voyage->departure }} ({{ $voyage->departure1 }})</span>
                 <time datetime="{{ $voyage->departure_date }}">
                   {{ \Carbon\Carbon::parse($voyage->departure_date)->format('d/m/Y') }}
                 </time>
@@ -27,6 +28,7 @@
 
               <span class="card-badge1">
                 <ion-icon name="airplane-outline" style="transform: rotate(135deg);"></ion-icon>
+                <span>{{ $voyage->arrival }} ({{ $voyage->arrival1 }})</span>
                 <time datetime="{{ $voyage->arrival_date }}">
                   {{ \Carbon\Carbon::parse($voyage->arrival_date)->format('d/m/Y') }}
                 </time>
