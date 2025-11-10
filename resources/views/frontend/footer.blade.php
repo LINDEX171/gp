@@ -11,7 +11,7 @@
           </li>
 
            <li><a href="{{ url('/') }}" class="navbar-link">Accueil</a></li>
-      <li><a href="{{ url('/gp') }}" class="navbar-link">Devenir GP</a></li>
+      <li><a href="{{ url('/gp') }}" class="navbar-link">Postuler pour un voyage</a></li>
       <li><a href="{{ url('/voyagedispo') }}" class="navbar-link">Voyages Disponibles</a></li>
 
         </ul>

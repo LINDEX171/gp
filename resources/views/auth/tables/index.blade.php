@@ -29,6 +29,7 @@
                     <th>Date arrivée</th>
                     <th>Poids (kg)</th>
                     <th>Prix (FCFA)</th>
+                    <th>commentaire</th>
                     <th>Whatsapp</th>
                     <th>Statut</th>
                     <th>Actions</th>
@@ -119,6 +120,7 @@
                       <td>{{ $voyage->arrival_date }}</td>
                       <td>{{ $voyage->weight }}</td>
                       <td>{{ $voyage->price }}</td>
+                      <td>{{ $voyage->comment }}</td>
                       <td><a href="https://wa.me/{{ preg_replace('/\D/', '', $voyage->whatsapp) }}" target="_blank" style="color:#25D366;text-decoration:none;">
                       {{ $voyage->whatsapp }}
                     </a></td>
