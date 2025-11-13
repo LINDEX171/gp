@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TemplateController::class, 'index'])->name('home');
 Route::get('/gp', [TemplateController::class, 'indexgp'])->name('gp');
 Route::get('/voyagedispo', [TemplateController::class, 'indexvoyagedispo'])->name('voyagedispo');
+Route::get('/aide', [TemplateController::class, 'aide'])->name('aide');
 
 
 

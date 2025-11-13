@@ -30,6 +30,15 @@ class TemplateController extends Controller
     return view('frontend.avalaibletrip', compact('voyages'));
 }
 
+
+ public function aide()
+{
+    $voyages = Voyage::where('status', 'validated')->get();
+
+    // Envoie la variable à la vue
+    return view('frontend.aide');
+}
+
     public function show($id)
 {
     $voyage = Voyage::findOrFail($id);
